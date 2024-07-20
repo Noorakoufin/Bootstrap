@@ -78,12 +78,13 @@
     font-size: 31px;
     top: 0px;
   }
-#custom-hero ,
+
+  #custom-hero,
   .drop-btn2 {
     height: unset !important;
-}
+  }
 
-  .scroll-nav ,
+  .scroll-nav,
   .custom-sticky {
     position: static !important;
   }
@@ -170,7 +171,8 @@
   .card-cover {
     height: 53vh !important;
   }
-.women {
+
+  .women {
     font-size: 1.6rem !important;
     width: 46% !important;
   }
@@ -230,8 +232,8 @@
   .women {
     width: 68% !important;
   }
-  #accordian-style-section 
-  {
+
+  #accordian-style-section {
     padding-bottom: 0 !important;
   }
 }
