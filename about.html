@@ -238,15 +238,6 @@
             }
         }
 
-        /* aactive class */
-        .custom-nav .nav-link .active {
-            color: #fafafa;
-            width: 100%;
-            background-color: #cdcdcd80;
-            border-radius: 52px;
-
-        }
-
         /* -----------------------------scrollspy ---------------------------------*/
         #freq {
             font-size: 64px;
@@ -444,6 +435,13 @@
         #faq2 {
             display: none;
         }
+
+        .active {
+            color: #ffffff;
+            width: 100%;
+            background-color: #cdcdcd80;
+            border-radius: 52px;
+        }
     </style>
     <link rel="stylesheet" href="responsive.css">
     <title>Google I/O 2024</title>
@@ -535,7 +533,7 @@
     <!-- scrollspy section -->
 
     <div class="container-fluid p-lg-5 p-md-0">
-        <div class="row row-cols-2 justify-content-between scroll-container">
+        <div class="row row-cols-2 justify-content-between scroll-container flex-md-row flex-sm-column flex-lg-row">
             <div class="col-12 col-sm-12 col-md-4 col-lg-4 scroll-nav">
                 <h2 id="freq" class="mb-lg-5 mb-md-0">Frequently asked questions</h2>
                 <h2 id="faq2" style="font-size: 2rem;padding-left: 3rem;padding-bottom: 1rem;">FAQ</h2>
@@ -693,7 +691,7 @@
                                     event.
                                     Check out what your local developer community is offering as well.</p>
                             </div>
-                            <div class="content three pt-4" style="padding-left: 2rem;padding-right: 2rem;">
+                            <div class="content three pt-4">
                                 <h2 class="pb-3" style="font-size: 1.8rem;">How can I stay informed on the latest from
                                     Google I/O?</h2>
                                 <p class="pb-3" style="font-size: 1.09rem;">Register to receive important information

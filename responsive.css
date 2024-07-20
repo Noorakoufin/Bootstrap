@@ -33,6 +33,7 @@
   /* explore */
   .column-custom {
     width: unset !important;
+    gap: 0 !important;
   }
 
   #commu {
@@ -53,7 +54,6 @@
 
 @media screen and (max-width:768px) {
   .responsive-card {
-    flex-direction: column;
     height: unset;
   }
 
@@ -73,24 +73,19 @@
     width: 100%;
   }
 
-  /* about's scrollspy */
-  .scroll-container {
-    flex-direction: column;
-  }
-
   /* about */
   #freq {
     font-size: 31px;
     top: 0px;
   }
+#custom-hero ,
+  .drop-btn2 {
+    height: unset !important;
+}
 
-  .scroll-nav {
-    position: sticky;
-    top: 0;
-  }
-
+  .scroll-nav ,
   .custom-sticky {
-    position: static;
+    position: static !important;
   }
 
   .custom-sticky .nav-pills {
@@ -104,7 +99,7 @@
   }
 
   .scroll-content {
-    margin-top: 2.5rem;
+    margin-top: 1.3rem;
     width: 100% !important;
   }
 
@@ -144,7 +139,7 @@
 
   #community,
   #heading {
-    font-size: 2.3rem;
+    font-size: 2.3rem !important;
   }
 
   #grow {
@@ -163,7 +158,8 @@
   }
 
   #maso {
-    height: 2134px;
+    height: 600px !important;
+    overflow: auto;
   }
 
   #frame {
@@ -172,15 +168,9 @@
 
   /* more */
   .card-cover {
-    background-position: right center !important;
     height: 53vh !important;
   }
-
-  .image-slidein {
-    padding-left: 12px;
-  }
-
-  .women {
+.women {
     font-size: 1.6rem !important;
     width: 46% !important;
   }
@@ -237,6 +227,13 @@
     padding-left: 0;
   }
 
+  .women {
+    width: 68% !important;
+  }
+  #accordian-style-section 
+  {
+    padding-bottom: 0 !important;
+  }
 }
 
 @media screen and (max-width:375px) {
@@ -250,6 +247,6 @@
   }
 
   #join {
-    font-size: 2.4rem !important;
+    font-size: 2rem !important;
   }
 }

@@ -68,6 +68,130 @@
             font-family: Google Sans, arial, sans-serif;
         }
 
+
+        .custom-nav {
+            width: 100%;
+        }
+
+        .bg-custom {
+            background-image: linear-gradient(#3e008f, #660a8f);
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: aniamtion 0.6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+            animation: popover 0.6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        }
+
+        @keyframes popover {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        #navbarSupportedContent {
+            transition: transform 0.5s;
+            animation: slidein 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s;
+        }
+
+        @keyframes slidein {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 0.3px;
+        }
+
+        .dropdown-menu {
+            min-width: 7rem !important;
+            background-color: #202124;
+        }
+
+        .dropdown-menu a {
+            color: white;
+        }
+
+        .dropdown-item:focus,
+        .dropdown-item:hover {
+            color: rgb(189, 184, 184);
+            background-color: #3f4043;
+        }
+
+        .dropdown-toggle::after {
+            margin-left: 1.5em;
+        }
+
+        /* nav transition hover */
+        .nav-link {
+            transition: all 2s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            text-align: left;
+            content: '';
+            margin: 0;
+            opacity: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+            z-index: 1;
+        }
+
+        .nav-link:hover::after {
+            z-index: -10;
+            animation: fill 0.8s forwards;
+            opacity: 1;
+        }
+
+        @keyframes fill {
+            0% {
+                width: 0%;
+                height: 1px;
+            }
+
+            50% {
+                width: 100%;
+                height: 1px;
+            }
+
+            100% {
+                width: 100%;
+                height: 100%;
+                border-radius: 52px;
+                background-color: #cdcdcd80;
+
+            }
+        }
+
+        /* navbar toggle */
+
+        .navbar-toggler-icon {
+            background-image: url(boot-images/toggle.png);
+        }
+
         /* women card */
         .card-cover {
             background-image: url('boot-images/2024homebanner.png');
@@ -312,15 +436,58 @@
         .btn-scroll-top:hover {
             transform: translateY(-5px);
         }
+
+        .active {
+            color: #ffffff;
+            width: 100%;
+            background-color: #cdcdcd80;
+            border-radius: 52px;
+        }
     </style>
 
 </head>
 
 <body id="mystyle">
 
+    <!-- navbar section -->
+    <nav class="navbar navbar-expand-lg  bg-custom py-3 ps-4 pe-5  border-bottom border-2">
+        <a class="navbar-brand me-4" href="index.html"><img src="boot-images/logo-white.png" alt="" width="128"
+                height="28"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between custom-nav">
+                <ul class="first list-unstyled d-flex gap-3">
+                    <li class="nav-item"><a href="explore.html" class="nav-link px-4">Explore</a></li>
+                    <li class="nav-item"><a href="community.html" class="nav-link active px-4">Community</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link  px-4">About</a></li>
+                </ul>
+                <!-- dropdown section -->
+                <ul class="second d-flex">
+                    <li class="dropdown  nav-item list-unstyled">
+                        <a class="nav-link dropdown-toggle bg-transparent shadow-none english px-4" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            English
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Español</a></li>
+                            <li><a class="dropdown-item" href="#">Português</a></li>
+                            <li><a class="dropdown-item" href="#">中国人</a></li>
+                            <li><a class="dropdown-item" href="#">Indonesia</a></li>
+                            <li><a class="dropdown-item" href="#">Française</a></li>
+                        </ul>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+
     <!-- women card -->
     <div class="card card-cover text-bg-dark rounded-4 shadow-lg">
-        <div class="d-flex flex-column h-100 p-5 justify-content-center text-dark text-shadow-1 image-slidein">
+        <div
+            class="d-flex flex-column h-100 p-lg-5 p-sm-4 p-3 justify-content-center text-dark text-shadow-1 image-slidein">
             <h1 class="lh-1 fw-bold women">We’re building a world where <span style="color: #b5485b;">all
                     women</span> can
                 thrive in tech.</h1>
@@ -442,7 +609,7 @@
     <!-- Accordion -->
     <div class="container-fluid bg-gray p-lg-5 p-sm-5" id="accordion-style-1">
 
-        <section>
+        <section id="accordian-style-section">
             <div class="row">
                 <div class="col-12">
                     <h1 class="text-green mb-4 text-center">Frequently Asked Questions</h1>
