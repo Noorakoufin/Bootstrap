@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="boot-images/io.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title> ABOUT - Google I/O 2024</title>
+    <link rel="stylesheet" href="responsive.css">
+    <style>
+        :root {
+            --border-color: #dadce0;
+            --primary-color: #fff;
+            --font-thickness: 400;
+            --bg-color: #202124;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: .4rem;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #787774;
+            border-radius: .5rem;
+
+        }
+
+        ::selection {
+            background-color: #C49871;
+        }
+
+        .btn {
+            transition: all o.5s ease;
+        }
+
+        #mystyle {
+            color: var(--primary-color);
+            background-color: var(--bg-color);
+            font-family: Google Sans, arial, sans-serif;
+        }
+
+
+        .custom-nav {
+            width: 100%;
+        }
+
+        .bg-custom {
+            background-image: linear-gradient(#3e008f, #660a8f);
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: aniamtion 0.6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+            animation: popover 0.6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        }
+
+        @keyframes popover {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        #navbarSupportedContent {
+            transition: transform 0.5s;
+            animation: slidein 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s;
+        }
+
+        @keyframes slidein {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 0.3px;
+        }
+
+        .dropdown-menu {
+            min-width: 7rem !important;
+            background-color: #202124;
+        }
+
+        .dropdown-menu a {
+            color: white;
+        }
+
+        .dropdown-item:focus,
+        .dropdown-item:hover {
+            color: rgb(189, 184, 184);
+            background-color: #3f4043;
+        }
+
+        .dropdown-toggle::after {
+            margin-left: 1.5em;
+        }
+
+        /* hero section */
+        h1 {
+            font-size: 106px;
+            line-height: 80px;
+            letter-spacing: -2px;
+            font-weight: 500;
+        }
+
+        .lead {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 500;
+        }
+
+        .custom-padding {
+            width: max-content;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 0.8rem 1.7rem;
+        }
+
+        /* button animation */
+        .button {
+            position: relative;
+            overflow: hidden;
+            height: 3rem;
+            padding: 0 2rem;
+            border-radius: 1.5rem;
+            background: #3d3a4e;
+            background-size: 400%;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover::before {
+            transform: scaleX(1);
+        }
+
+        .button-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            width: 100%;
+            height: inherit;
+            border-radius: inherit;
+            background: linear-gradient(82.3deg,
+                    rgba(150, 93, 233, 1) 10.8%,
+                    rgb(88, 148, 238) 94.3%);
+            transition: all 0.475s;
+        }
+
+        /* nav transition hover */
+        .navbar .nav-link {
+            transition: all 2s;
+            position: relative;
+        }
+
+        .custom-nav .nav-link::after {
+            text-align: left;
+            content: '';
+            margin: 0;
+            opacity: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .custom-nav .nav-link:hover {
+            color: #fefefe;
+            z-index: 1;
+        }
+
+        .custom-nav .nav-link:hover::after {
+            z-index: -10;
+            animation: fill 0.8s forwards;
+            opacity: 1;
+        }
+
+        @keyframes fill {
+            0% {
+                width: 0%;
+                height: 1px;
+            }
+
+            50% {
+                width: 100%;
+                height: 1px;
+            }
+
+            100% {
+                width: 100%;
+                height: 100%;
+                border-radius: 52px;
+                background: #cdcdcd80;
+            }
+        }
+
+        /* aactive class */
+        .custom-nav .nav-link .active {
+            color: #fafafa;
+            width: 100%;
+            background-color: #cdcdcd80;
+            border-radius: 52px;
+
+        }
+
+        /* -----------------------------scrollspy ---------------------------------*/
+        #freq {
+            font-size: 64px;
+            line-height: 70px;
+            font-weight: 600;
+            position: sticky;
+            top: 15px;
+        }
+
+        .custom-sticky {
+            position: sticky;
+            top: 257px;
+        }
+
+        .nav-pills {
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        #scrollspy-id .btn-outline-dark {
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 500;
+            padding: .75rem 1.25rem;
+        }
+
+        #scrollspy-id .btn-outline-dark:hover {
+            background-color: transparent;
+        }
+
+        .content {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        #general-id {
+            font-size: 2.5rem;
+            background: rgb(58, 161, 180);
+            background: linear-gradient(77deg, rgba(58, 161, 180, 1) 0%, rgba(82, 159, 119, 1) 50%, rgba(252, 114, 69, 1) 100%);
+        }
+
+
+        #register-id {
+            font-size: 2.5rem;
+            background: rgb(171, 61, 175);
+            background: linear-gradient(77deg, rgba(171, 61, 175, 1) 0%, rgba(117, 92, 159, 1) 24%, rgba(100, 63, 146, 1) 34%, rgba(147, 69, 157, 1) 47%, rgba(152, 96, 163, 1) 63%, rgba(167, 86, 190, 1) 86%, rgba(227, 83, 175, 0.8632140600380778) 100%);
+        }
+
+        #google-id {
+            font-size: 2.5rem;
+            background: rgb(63, 94, 251);
+            background: linear-gradient(77deg, rgba(63, 94, 251, 1) 0%, rgba(153, 67, 203, 1) 59%, rgba(70, 252, 170, 1) 100%);
+        }
+
+        #community-id {
+            font-size: 2.5rem;
+            background: rgb(131, 58, 180);
+            background: linear-gradient(77deg, rgba(131, 58, 180, 1) 0%, rgba(116, 78, 78, 1) 50%, rgba(252, 176, 69, 1) 100%);
+        }
+
+        #terms-id {
+            font-size: 2.5rem;
+            background: rgb(123, 168, 119);
+            background: linear-gradient(344deg, rgba(123, 168, 119, 1) 0%, rgba(146, 150, 60, 1) 16%, rgba(52, 154, 146, 1) 43%, rgba(89, 176, 87, 1) 51%, rgba(119, 92, 148, 1) 69%, rgba(97, 99, 184, 1) 100%);
+        }
+
+        #scrollspy-id button {
+            color: white;
+        }
+
+        .nav-pills .nav-link.active {
+            background: rgb(182, 120, 180);
+            background: linear-gradient(165deg, rgba(182, 120, 180, 1) 18%, rgba(168, 183, 204, 1) 47%, rgba(121, 141, 169, 1) 75%, rgba(112, 136, 169, 1) 91%, rgba(97, 99, 184, 1) 100%);
+            width: max-content;
+            color: black;
+            padding: 0;
+
+        }
+
+        /* footer section */
+        .form-select {
+            width: max-content;
+            background-color: transparent;
+            color: #9aa0a6;
+            border: 0;
+            padding: .375rem 6.25rem .375rem .75rem;
+            border-bottom: 1px solid grey;
+            border-radius: 0;
+        }
+
+        /* footer a style */
+        .footer .d-flex img,
+        .footer .d-flex a {
+            transition: transform 0.3s ease;
+        }
+
+        .footer .d-flex img:hover,
+        .footer .d-flex a:hover {
+            transform: translateX(10px);
+        }
+
+        #icon a {
+            color: #9aa0a6;
+        }
+
+        #icon a:hover {
+            transform: translateY(-10px);
+        }
+
+        .fa-youtube:hover {
+            color: rgb(250, 12, 12);
+            background-color: white;
+        }
+
+        .fa-instagram:hover {
+            color: #ff00b1;
+        }
+
+        i.fa-brands.fa-linkedin:hover {
+            color: #0346d0;
+        }
+
+        .fa-x-twitter:hover {
+            background-color: black;
+        }
+
+        /* navbar toggle */
+
+        .navbar-toggler-icon {
+            background-image: url(boot-images/toggle.png);
+        }
+
+        /* back to top */
+
+        .btn-scroll-top {
+
+            position: fixed;
+            right: 1.25rem;
+            bottom: -4.125rem;
+            z-index: 1030;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.75rem;
+            height: 2.75rem;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #b5b5b5;
+            background-color: rgb(116 114 114);
+            border-radius: 50%;
+            /* opacity: 0; */
+            transition: animation 4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation: backtop 4s cubic-bezier(0.68, -0.55, 0.265, 1.55) both 4s;
+            animation-timeline: scroll(250px 0px);
+            transition: transform 0.5s ease-out;
+        }
+
+        .btn-scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        @keyframes backtop {
+            from {
+                bottom: -4.125rem;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 1.25rem;
+                opacity: 1;
+            }
+        }
+
+        .btn-scroll-top>.btn-scroll-top-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* modal */
+
+        .custom-button {
+            background-color: black;
+            border: none;
+        }
+
+        .custom-button a {
+            color: white;
+        }
+
+        .custom-button a:hover {
+            color: black;
+            font-weight: 600;
+        }
+
+        #faq2 {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="responsive.css">
+    <title>Google I/O 2024</title>
+</head>
+
+<body id="mystyle">
+    <!-- navbar section -->
+    <nav class="navbar navbar-expand-lg  bg-custom py-3 ps-4 pe-5  border-bottom border-2">
+        <a class="navbar-brand me-4" href="index.html"><img src="boot-images/logo-white.png" alt="" width="128"
+                height="28"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between custom-nav">
+                <ul class="first list-unstyled d-flex gap-3">
+                    <li class="nav-item"><a href="explore.html" class="nav-link px-4">Explore</a></li>
+                    <li class="nav-item"><a href="community.html" class="nav-link px-4">Community</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link active px-4">About</a></li>
+                </ul>
+                <!-- dropdown section -->
+                <ul class="second d-flex">
+                    <li class="dropdown  nav-item list-unstyled">
+                        <a class="nav-link dropdown-toggle bg-transparent shadow-none english px-4" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            English
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Español</a></li>
+                            <li><a class="dropdown-item" href="#">Português</a></li>
+                            <li><a class="dropdown-item" href="#">中国人</a></li>
+                            <li><a class="dropdown-item" href="#">Indonesia</a></li>
+                            <li><a class="dropdown-item" href="#">Française</a></li>
+                        </ul>
+                    </li>
+                    <!-- Button trigger modal -->
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal"
+                            data-bs-target="#signinModal" style="padding: .375rem 1.35rem;">Join</button>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+    <!-- Modal -->
+    <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signinModalLabel" style="color: #363232;font-weight: 600;">Sign in to
+                        join the Google developer program</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="" style="color: #0d0d0d;">Unlock AI tools,exclusive training and insider access. Join
+                        today and accelerate your developer journey
+                    </p>
+                </div>
+                <div class="modal-footer" style="border: 0;">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Dismiss</button>
+                    <button type="button" class="btn btn-light custom-button"> <a href="signin.html"
+                            style="text-decoration: none;font-size: unset;letter-spacing: 0;">SIGN IN</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- hero section -->
+    <div class="container-fluid my-5 border-bottom border-1">
+        <div class="row featurette">
+            <div class="col-md-5 ps-5 pe-4 py-5 d-flex flex-column  text-left">
+                <h1 class="featurette-heading fw-normal lh-1 font-medium" id="catch">About I/O</h1>
+                <p class="lead">Discover Google's latest product launches and more. It's open to everyone online!</p>
+                <button class="button custom-padding border-0">
+                    <span class="button-content">Watch now </span>
+                </button>
+
+            </div>
+            <div class="col-md-7">
+                <img src="boot-images/io24-about-hero-dark.webp" alt="" width="100%" height="350"
+                    class="hero-image object-cover img-fluid">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- scrollspy section -->
+
+    <div class="container-fluid p-lg-5 p-md-0">
+        <div class="row row-cols-2 justify-content-between scroll-container">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 scroll-nav">
+                <h2 id="freq" class="mb-lg-5 mb-md-0">Frequently asked questions</h2>
+                <h2 id="faq2" style="font-size: 2rem;padding-left: 3rem;padding-bottom: 1rem;">FAQ</h2>
+                <!-- Navigation bar -->
+                <div class="custom-sticky">
+                    <nav id="scrollspy-id" class="navbar">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link p-0" href="#general" id="general-id1"> <button type="button"
+                                        class="btn btn-outline-dark  border border-2  rounded-3">General</button></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0" href="#register"> <button type="button"
+                                        class="btn btn-outline-dark  border border-2  rounded-3"
+                                        id="register-id1">Registration</button></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0" href="#google"> <button type="button"
+                                        class="btn btn-outline-dark  border border-2  rounded-3" id="google-id1">Google
+                                        developer
+                                        profile</button></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0" href="#community"> <button type="button"
+                                        class="btn btn-outline-dark  border border-2  rounded-3"
+                                        id="community-id1">community</button></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link p-0" href="#terms"> <button type="button"
+                                        class="btn btn-outline-dark  border border-2  rounded-3" id="terms-id1">Terms
+                                        and
+                                        conditions</button></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8 px-lg-5 px-sm-0 scroll-content" style="width: 60%;">
+                <div class="d-flex  flex-column gap-5 over" data-spy="scroll" data-target="#scrollspy-id"
+                    data-offset="60">
+                    <!-- section 1 -->
+                    <div class="section1 border border-2" style="border-radius: 1rem;" id="general">
+                        <h2 class="display-4 border-bottom border-2 px-5 py-4" id="general-id"
+                            style="border-top-left-radius: 1rem;border-top-right-radius: 1rem;">General
+                        </h2>
+                        <div class="main-content px-4">
+                            <div class="content one pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">When is Google I/O 2024?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">This year's event will be broadcast in front
+                                    of
+                                    a small live audience and is open to everyone
+                                    online on May 14, 2024. Tune in to the livestreamed keynotes, then dive into
+                                    technical
+                                    content
+                                    and learning material on demand.</p>
+                            </div>
+                            <div class="content two pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">How will Google I/O 2024 work for attendees
+                                    outside of the US?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">One of the exciting things about a digital
+                                    experience is the opportunity to reach a global
+                                    audience. Content will be provided on demand and in different languages to serve
+                                    everyone.
+                                    Some translated content such as captioned videos may be available shortly after the
+                                    event.
+                                    Check out what your local developer community is offering as well.</p>
+                            </div>
+                            <div class="content three pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">How can I stay informed on the latest from
+                                    Google I/O?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">Register to receive important information
+                                    via
+                                    email about the digital event. To stay
+                                    up-to-date on the latest information on sessions, speakers, and other activities,
+                                    check
+                                    the
+                                    Google I/O 2024 website, visit the Google Developers blog, and follow us on X,
+                                    LinkedIn,
+                                    and
+                                    Instagram. Join the social conversation about Google I/O 2024 via the official
+                                    #GoogleIO
+                                    hashtag.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- section2 -->
+                    <div class="section1 border border-2" style="border-radius: 1rem;" id="register">
+                        <h2 class="display-4 border-bottom border-2 px-5 py-4" id="register-id"
+                            style="border-top-left-radius: 1rem;border-top-right-radius: 1rem;">Registration
+                        </h2>
+                        <div class="main-content px-4">
+                            <div class="content one pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">When is Google I/O 2024?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">This year's event will be broadcast in front
+                                    of
+                                    a small live audience and is open to everyone
+                                    online on May 14, 2024. Tune in to the livestreamed keynotes, then dive into
+                                    technical
+                                    content
+                                    and learning material on demand.</p>
+                            </div>
+                            <div class="content two pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">How will Google I/O 2024 work for attendees
+                                    outside of the US?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">One of the exciting things about a digital
+                                    experience is the opportunity to reach a global
+                                    audience. Content will be provided on demand and in different languages to serve
+                                    everyone.
+                                    Some translated content such as captioned videos may be available shortly after the
+                                    event.
+                                    Check out what your local developer community is offering as well.</p>
+                            </div>
+                            <div class="content three pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">How can I stay informed on the latest from
+                                    Google I/O?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">Register to receive important information
+                                    via
+                                    email about the digital event. To stay
+                                    up-to-date on the latest information on sessions, speakers, and other activities,
+                                    check
+                                    the
+                                    Google I/O 2024 website, visit the Google Developers blog, and follow us on X,
+                                    LinkedIn,
+                                    and
+                                    Instagram. Join the social conversation about Google I/O 2024 via the official
+                                    #GoogleIO
+                                    hashtag.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- section3 -->
+                    <div class="section1 border border-2" style="border-radius: 1rem;" id="google">
+                        <h2 class="display-4 border-bottom border-2 px-5 py-4" id="google-id"
+                            style="border-top-left-radius: 1rem;border-top-right-radius: 1rem;">Google developer profile
+                        </h2>
+                        <div class="main-content px-4">
+                            <div class="content one pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">When is Google I/O 2024?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">This year's event will be broadcast in front
+                                    of
+                                    a small live audience and is open to everyone
+                                    online on May 14, 2024. Tune in to the livestreamed keynotes, then dive into
+                                    technical
+                                    content
+                                    and learning material on demand.</p>
+                            </div>
+                            <div class="content two pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">How will Google I/O 2024 work for attendees
+                                    outside of the US?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">One of the exciting things about a digital
+                                    experience is the opportunity to reach a global
+                                    audience. Content will be provided on demand and in different languages to serve
+                                    everyone.
+                                    Some translated content such as captioned videos may be available shortly after the
+                                    event.
+                                    Check out what your local developer community is offering as well.</p>
+                            </div>
+                            <div class="content three pt-4" style="padding-left: 2rem;padding-right: 2rem;">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">How can I stay informed on the latest from
+                                    Google I/O?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">Register to receive important information
+                                    via
+                                    email about the digital event. To stay
+                                    up-to-date on the latest information on sessions, speakers, and other activities,
+                                    check
+                                    the
+                                    Google I/O 2024 website, visit the Google Developers blog, and follow us on X,
+                                    LinkedIn,
+                                    and
+                                    Instagram. Join the social conversation about Google I/O 2024 via the official
+                                    #GoogleIO
+                                    hashtag.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- section4 -->
+                    <div class="section1 border border-2" style="border-radius: 1rem;" id="community">
+                        <h2 class="display-4 border-bottom border-2 px-5 py-4" id="community-id"
+                            style="border-top-left-radius: 1rem;border-top-right-radius: 1rem;">community
+                        </h2>
+                        <div class="main-content px-4">
+                            <div class="content one pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">When is Google I/O 2024?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">This year's event will be broadcast in front
+                                    of
+                                    a small live audience and is open to everyone
+                                    online on May 14, 2024. Tune in to the livestreamed keynotes, then dive into
+                                    technical
+                                    content
+                                    and learning material on demand.</p>
+                            </div>
+                            <div class="content two pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">How will Google I/O 2024 work for attendees
+                                    outside of the US?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">One of the exciting things about a digital
+                                    experience is the opportunity to reach a global
+                                    audience. Content will be provided on demand and in different languages to serve
+                                    everyone.
+                                    Some translated content such as captioned videos may be available shortly after the
+                                    event.
+                                    Check out what your local developer community is offering as well.</p>
+                            </div>
+                            <div class="content three pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">How can I stay informed on the latest from
+                                    Google I/O?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">Register to receive important information
+                                    via
+                                    email about the digital event. To stay
+                                    up-to-date on the latest information on sessions, speakers, and other activities,
+                                    check
+                                    the
+                                    Google I/O 2024 website, visit the Google Developers blog, and follow us on X,
+                                    LinkedIn,
+                                    and
+                                    Instagram. Join the social conversation about Google I/O 2024 via the official
+                                    #GoogleIO
+                                    hashtag.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- section5 -->
+                    <div class="section1 border border-2" style="border-radius: 1rem;" id="terms">
+                        <h2 class="display-4 border-bottom border-2 px-5 py-4" id="terms-id"
+                            style="border-top-left-radius: 1rem;border-top-right-radius: 1rem;">Terms and conditions
+                        </h2>
+                        <div class="main-content px-4">
+                            <div class="content one pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">When is Google I/O 2024?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">This year's event will be broadcast in front
+                                    of
+                                    a small live audience and is open to everyone
+                                    online on May 14, 2024. Tune in to the livestreamed keynotes, then dive into
+                                    technical
+                                    content
+                                    and learning material on demand.</p>
+                            </div>
+                            <div class="content two pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">How will Google I/O 2024 work for attendees
+                                    outside of the US?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">One of the exciting things about a digital
+                                    experience is the opportunity to reach a global
+                                    audience. Content will be provided on demand and in different languages to serve
+                                    everyone.
+                                    Some translated content such as captioned videos may be available shortly after the
+                                    event.
+                                    Check out what your local developer community is offering as well.</p>
+                            </div>
+                            <div class="content three pt-4">
+                                <h2 class="pb-3" style="font-size: 1.8rem;">How can I stay informed on the latest from
+                                    Google I/O?</h2>
+                                <p class="pb-3" style="font-size: 1.09rem;">Register to receive important information
+                                    via
+                                    email about the digital event. To stay
+                                    up-to-date on the latest information on sessions, speakers, and other activities,
+                                    check
+                                    the
+                                    Google I/O 2024 website, visit the Google Developers blog, and follow us on X,
+                                    LinkedIn,
+                                    and
+                                    Instagram. Join the social conversation about Google I/O 2024 via the official
+                                    #GoogleIO
+                                    hashtag.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- footer -->
+    <div class="footer p-5">
+        <div class="d-flex w-100 flex-column gap-4 justify-content-center align-items-start">
+            <img src="boot-images/google.png" alt="" class="object-cover" style="width: 180px;height:20px;">
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">I/O 2023</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">I/O Puzzle</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">Privacy and terms</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">Community Guidelines</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">FAQ</a>
+            <div class="select-custom py-5">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>English</option>
+                    <option value="1">Português</option>
+                    <option value="2">Español</option>
+                    <option value="3">中国人</option>
+                    <option value="3">Indonesia</option>
+                    <option value="3">Française</option>
+                </select>
+            </div>
+        </div>
+        <div class="d-flex gap-4" id="icon">
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- back to top -->
+    <a href="#top" class="btn-scroll-top show" data-scroll="">
+        <span class="btn-scroll-top-tooltip  fs-sm text-white"><i class="fa-solid fa-arrow-up"></i></span>
+
+    </a>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $('body').scrollspy({ target: '#scrollspy-id', offset: 60 });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

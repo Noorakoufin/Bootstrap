@@ -1,0 +1,255 @@
+@media screen and (max-width:1200px) {
+
+  .text-left-image,
+  .text-right-image,
+  .image-slidein {
+    animation: none !important;
+  }
+}
+
+@media screen and (max-width:958px) {
+
+  /* masonry */
+  .card4 {
+    top: 201.763px !important;
+  }
+
+  .card6 {
+    top: 366.737px !important;
+  }
+
+  .card7 {
+    top: 376.725px !important;
+  }
+
+  .card5 {
+    top: 401.551px;
+  }
+
+  .card8 {
+    display: none;
+  }
+
+  /* explore */
+  .column-custom {
+    width: unset !important;
+  }
+
+  #commu {
+    font-size: 65px;
+  }
+
+  #join {
+    font-size: 2.8rem !important;
+  }
+
+  .women {
+    font-size: 2.5rem !important;
+    width: 72% !important;
+  }
+}
+
+/* google */
+
+@media screen and (max-width:768px) {
+  .responsive-card {
+    flex-direction: column;
+    height: unset;
+  }
+
+  .container-fluid .responsive-card .responsive-child {
+    width: 100%;
+  }
+
+  .custom-gap {
+    gap: 2rem;
+  }
+
+  .column-custom {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* about's scrollspy */
+  .scroll-container {
+    flex-direction: column;
+  }
+
+  /* about */
+  #freq {
+    font-size: 31px;
+    top: 0px;
+  }
+
+  .scroll-nav {
+    position: sticky;
+    top: 0;
+  }
+
+  .custom-sticky {
+    position: static;
+  }
+
+  .custom-sticky .nav-pills {
+    flex-direction: row;
+    gap: 0.7rem;
+  }
+
+  #scrollspy-id .btn-outline-dark {
+    font-size: 14px;
+    padding: .75rem 0.65rem;
+  }
+
+  .scroll-content {
+    margin-top: 2.5rem;
+    width: 100% !important;
+  }
+
+  .over {
+    height: 500px;
+    overflow: scroll;
+  }
+}
+
+/* masonry */
+@media screen and (max-width:576px) {
+
+  .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5,
+  .card6,
+  .card7,
+  .card8 {
+    position: static !important;
+  }
+
+  h2.featurette-heading.fw-normal.lh-1 {
+    width: 100% !important;
+    font-size: 3rem !important;
+  }
+
+  #women-text,
+  #freq {
+    display: none;
+  }
+
+  #catch {
+    font-size: 50px;
+  }
+
+  #community,
+  #heading {
+    font-size: 2.3rem;
+  }
+
+  #grow {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #commu {
+    font-size: 52px;
+  }
+
+  /* explore */
+  .column-custom {
+    flex-direction: column;
+    align-items: normal;
+  }
+
+  #maso {
+    height: 2134px;
+  }
+
+  #frame {
+    gap: 3rem;
+  }
+
+  /* more */
+  .card-cover {
+    background-position: right center !important;
+    height: 53vh !important;
+  }
+
+  .image-slidein {
+    padding-left: 12px;
+  }
+
+  .women {
+    font-size: 1.6rem !important;
+    width: 46% !important;
+  }
+
+  p.lead {
+    width: 100% !important;
+    font-size: 1.15rem !important;
+  }
+
+  h2.featurette-heading.fw-normal.lh-1 {
+    font-size: 2.3rem !important;
+  }
+
+  .card-header {
+    padding: 0 !important;
+  }
+
+  .text-body-secondary {
+    margin-left: 0;
+  }
+
+  button.btn.btn-link.btn-block.text-left.custom-focus.collapsed {
+    padding: 0;
+    font-size: 12px !important;
+  }
+
+  .card-header h5 {
+
+    font-size: 1.65rem !important;
+
+  }
+
+  #accordion-style-1 .btn-link {
+    font-size: 12px;
+  }
+
+  .text-right-image {
+    padding-left: 0 !important;
+  }
+
+  #faq2 {
+    display: block;
+  }
+}
+
+@media screen and (max-width:400px) {
+
+  .navbar-nav,
+  .first {
+    display: block !important;
+  }
+
+  .second {
+    padding-left: 0;
+  }
+
+}
+
+@media screen and (max-width:375px) {
+  #faq2 {
+    display: none;
+  }
+
+  .content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #join {
+    font-size: 2.4rem !important;
+  }
+}

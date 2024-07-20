@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="boot-images/io.png" type="image/x-icon">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <title>Google I/O 2024</title>
+</head>
+
+<body id="mystyle">
+  <!-- navbar section -->
+  <nav class="navbar navbar-expand-lg  bg-custom py-3 ps-4 pe-5 position-sticky border-bottom border-2">
+    <a class="navbar-brand me-4" href="index.html"><img src="boot-images/logo-white.png" alt="" width="128"
+        height="28"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between custom-nav">
+        <ul class="first list-unstyled d-flex gap-3">
+          <li class="nav-item"><a href="explore.html" class="nav-link px-4">Explore</a></li>
+          <li class="nav-item"><a href="community.html" class="nav-link px-4">Community</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link px-4">About</a></li>
+        </ul>
+
+        <!-- dropdown section -->
+        <ul class="second d-flex">
+          <li class="dropdown  nav-item list-unstyled">
+            <a class="nav-link dropdown-toggle bg-transparent shadow-none english px-4" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              English
+            </a>
+            <ul class="dropdown-menu text-small">
+              <li><a class="dropdown-item" href="#">English</a></li>
+              <li><a class="dropdown-item" href="#">Español</a></li>
+              <li><a class="dropdown-item" href="#">Português</a></li>
+              <li><a class="dropdown-item" href="#">中国人</a></li>
+              <li><a class="dropdown-item" href="#">Indonesia</a></li>
+              <li><a class="dropdown-item" href="#">Française</a></li>
+            </ul>
+          </li>
+          <!-- Button trigger modal -->
+          <li class="nav-item">
+            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal"
+              data-bs-target="#signinModal" style="padding: .375rem 1.35rem;">Join</button>
+          </li>
+        </ul>
+      </ul>
+    </div>
+  </nav>
+  <!-- Modal -->
+  <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signinModalLabel" style="color: #363232;font-weight: 600;">Sign in to join the
+            Google developer program</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="" style="color: #0d0d0d;">Unlock AI tools,exclusive training and insider access. Join today and
+            accelerate your developer journey
+          </p>
+        </div>
+        <div class="modal-footer" style="border: 0;">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Dismiss</button>
+          <button type="button" class="btn btn-light custom-button"> <a href="signin.html"
+              style="text-decoration: none;font-size: unset;letter-spacing: 0;">SIGN IN</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- hero section -->
+  <div class="container-fluid my-lg-5 my-sm-5 border-bottom border-1">
+    <div class="row featurette">
+      <div class="col-md-5 ps-5 pe-4 py-5 d-flex flex-column  text-left">
+        <h1 class="featurette-heading fw-normal lh-1 font-medium" id="catch">Catch up on Google I/O</h1>
+        <p class="lead">Check out the highlights and anything you might have missed.</p>
+        <button class="button custom-padding border-0">
+          <span class="button-content">Watch now </span>
+        </button>
+
+      </div>
+      <div class="col-md-7">
+        <img src="boot-images/image2-mobile.png" alt="" class="img-fluid no-image">
+        <img src="boot-images/io24-home-hero-phase4-2-dark.svg" alt="" width="100%" height="500"
+          class="hero-image object-cover img-fluid">
+      </div>
+    </div>
+  </div>
+  <!-- card section -->
+  <div class="container-fluid p-lg-5 p-sm-5">
+    <div class="row row-cols-3">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 custom-transform">
+        <img src="boot-images/io24-featured-keynote-recap-videos.webp" alt=""
+          class="w-100 h-225 object-cover img-fluid">
+        <div class="card-body">
+          <h5 id="color-trans">Watch the recap videos</h5>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 custom-transform">
+        <img src="boot-images/io24-featured-keynote-recap.webp" alt=""
+          class="w-100 h-225 object-cover custom-rounded img-fluid">
+        <div class="card-body">
+          <h5 id="color-trans">Google Keynote</h5>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 custom-transform">
+        <img src="boot-images/io24-featured-keynote-recap-developer.webp" alt=""
+          class="w-100 h-225 object-cover custom-rounded img-fluid">
+        <div class="card-body">
+          <h5 id="color-trans">Developer Keynote</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- big 2cards section -->
+  <div class="container-fluid p-lg-5 p-sm-5">
+    <div class="d-flex flex-fill flex-md-row flex-lg-row  justify-content-center gap-5 responsive-card">
+      <!-- card 1 -->
+      <div class="d-flex flex-column border h-100 responsive-child" style="border-radius: 2rem;">
+        <div class="flex-body d-flex flex-column p-5" style="height: 54%;">
+          <h2 id="community">Join a community group</h2>
+          <p style="font-size: 20px;">Meet developers, discover local groups, and build your global network.</p>
+          <button type="button" class="btn btn-outline-dark  border border-2">Get Started</button>
+        </div>
+        <div class="flex-image d-flex justify-content-end align-items-end responsive-image" style="height: 46%;">
+          <img src="boot-images/join-community.png" alt="" width="437" height="270" class="object-cover img-fluid">
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div class="d-flex flex-column border h-100 responsive-child" style="border-radius: 2rem;">
+        <div class="flex-body d-flex flex-column p-5" style="height: 54%;">
+          <h2 id="community">Continue learning</h2>
+          <p style="font-size: 20px;">Grow your skills around the Google technology you love.</p>
+          <button type="button" class="btn btn-outline-dark  border border-2">Get Started</button>
+        </div>
+        <div class="flex-image d-flex justify-content-end align-items-end responsive-image" style="height: 46%;">
+          <img src="boot-images/io24-learning-cta-dark.webp" alt="" width="259" height="192"
+            class="object-cover img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--card  end -->
+
+
+  <h2 class="d-block p-5" id="heading">What are you building for?</h2>
+
+
+  <!-- four card section -->
+  <div class="container-fluid p-lg-5 p-sm-5">
+    <div class="row row-cols-4">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3 hover-image pt-4">
+        <img src="boot-images/io24-stacks-m-dark.webp" style="width: 100%;height: auto;" alt=""
+          class="w-316 h-170 object-cover visible-image img-fluid">
+        <img src="boot-images/io24-stacks-m.webp" style="width: 100%;height: auto;" alt=""
+          class="w-316 h-170 object-cover hidden-image img-fluid">
+        <div class="card-body px-0 pt-4 pb-0">
+          <h5>Mobile</h5>
+          <p>Develope for a range of audiences and form factors.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3 hover-image pt-4">
+        <img src="boot-images/io24-stacks-w-dark.webp" alt="" style="width: 100%;height: auto;"
+          class="w-316 h-170 object-cover visible-image img-fluid">
+        <img src="boot-images/io24-stacks-w.webp" alt="" style="width: 100%;height: auto;"
+          class="w-316 h-170 object-cover hidden-image img-fluid">
+        <div class="card-body px-0 pt-4 pb-0">
+          <h5>Web</h5>
+          <p>create fast,secure sites for the open web.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3 hover-image pt-4">
+        <img src="boot-images/io24-stacks-a-dark.webp" alt="" style="width: 100%;height: auto;"
+          class="w-316 h-170 object-cover visible-image img-fluid">
+        <img src="boot-images/io24-stacks-a.webp" alt="" style="width: 100%;height: auto;"
+          class="w-316 h-170 object-cover hidden-image img-fluid">
+        <div class="card-body px-0 pt-4 pb-0">
+          <h5>ML/AI</h5>
+          <p>Access cutting-edge AI models and open source tools for machine learning.</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3 hover-image pt-4">
+        <img src="boot-images/io24-stacks-c-dark.webp" alt="" style="width: 100%;height: auto;"
+          class="w-316 h-170 object-cover visible-image img-fluid">
+        <img src="boot-images/io24-stacks-c.webp" alt="" style="width: 100%;height: auto;"
+          class="w-316 h-170 object-cover hidden-image img-fluid">
+        <div class="card-body px-0 pt-4 pb-0">
+          <h5>Cloud</h5>
+          <p>Simplify and scale end-to-end development.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of four card -->
+
+
+  <div class="d-flex justify-content-between align-items-center p-5" id="grow">
+    <h2 class="d-inline-block" id="heading">Grow your skills</h2>
+    <a href="explore.html" class="text-white">View all learning material</a>
+  </div>
+
+  <!-- grow skills card section -->
+  <div class="container-fluid px-lg-5 pb-lg-5 px-sm-5 pb-sm-5">
+    <div class="row row-cols-3 custom-gap">
+      <div class="col-12 col-sm-4 col-lg-4">
+        <div class="d-flex flex-column align-items-start hover-image2"
+          style=" border-radius: 1rem;padding:16px 16px 0 16px">
+          <div class="d-flex">
+            <img src="boot-images/image4.png" alt="" class="h-auto object-cover visible-image img-fluid">
+            <img src="boot-images/codelab.png" alt="" class="h-auto object-cover hidden-image img-fluid">
+          </div>
+          <div class="card-body px-0">
+            <h4>Codelabs and pathways</h4>
+            <p style="font-size: 17px;">start coding today with self paced and self exercises.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-lg-4">
+        <div class="d-flex flex-column align-items-start hover-image2"
+          style=" border-radius: 1rem;padding:16px 16px 0 16px">
+          <div class="d-flex">
+            <img src="boot-images/image5.png" alt="" class="h-auto object-cover visible-image img-fluid">
+            <img src="boot-images/workshop.png" alt="" class="h-auto object-cover hidden-image img-fluid">
+          </div>
+          <div class="card-body px-0">
+            <h4>Workshops</h4>
+            <p style="font-size: 17px;">Grow your skills through guided codelabs exercises.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-lg-4">
+        <div class="d-flex flex-column align-items-start hover-image2"
+          style=" border-radius: 1rem;padding:16px 16px 0 16px">
+          <div class="d-flex">
+            <img src="boot-images/image3.png" alt="" class="object-cover visible-image img-fluid"
+              style="width: 190px;height: 80px;">
+            <img src="boot-images/codelab2.png" alt="" class="object-cover hidden-image img-fluid"
+              style="width: 190px;height: 80px;">
+          </div>
+          <div class="card-body px-0">
+            <h4>Product demos</h4>
+            <p style="font-size: 17px;">Expand your skills with interactive demo experiences.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- cycle image -->
+  <div class="container-fluid py-5 px-0 my-5">
+    <img src="boot-images/cycle.png" alt="" class="object-cover w-100 h-100 img-fluid">
+  </div>
+
+
+  <!-- footer -->
+  <div class="footer p-5">
+    <div class="d-flex w-100 flex-column gap-4 justify-content-center align-items-start">
+      <img src="boot-images/google.png" alt="" class="object-cover" style="width: 180px;height:20px;">
+      <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">I/O 2023</a>
+      <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">I/O Puzzle</a>
+      <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">Privacy and terms</a>
+      <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">Community Guidelines</a>
+      <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">FAQ</a>
+      <div class="custom-select py-5">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>English</option>
+          <option value="1">Português</option>
+          <option value="2">Español</option>
+          <option value="3">中国人</option>
+          <option value="3">Indonesia</option>
+          <option value="3">Française</option>
+        </select>
+      </div>
+    </div>
+    <div class="d-flex gap-4" id="icon">
+      <a href=""><i class="fa-brands fa-youtube"></i></a>
+      <a href=""><i class="fa-brands fa-instagram"></i></a>
+      <a href=""><i class="fa-brands fa-linkedin"></i></a>
+      <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+    </div>
+  </div>
+
+  <!-- back to top -->
+  <a href="#top" class="btn-scroll-top show" data-scroll="">
+    <span class="btn-scroll-top-tooltip  fs-sm text-white"><i class="fa-solid fa-arrow-up"></i></span>
+
+  </a>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

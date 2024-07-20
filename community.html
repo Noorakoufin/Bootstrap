@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="boot-images/io.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title> COMMUNITY - Google I/O 2024</title>
+    <link rel="stylesheet" href="responsive.css">
+    <style>
+        :root {
+            --border-color: #dadce0;
+            --primary-color: #fff;
+            --font-thickness: 400;
+            --bg-color: #202124;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: .4rem;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #787774;
+            border-radius: .5rem;
+
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background-color: #C49871;
+        }
+
+        .btn {
+            transition: all o.5s ease;
+        }
+
+        /* navbar toggle */
+
+        .navbar-toggler-icon {
+            background-image: url(boot-images/toggle.png);
+        }
+
+        #mystyle {
+            color: var(--primary-color);
+            background-color: var(--bg-color);
+            font-family: Google Sans, arial, sans-serif;
+        }
+
+
+        .custom-nav {
+            width: 100%;
+        }
+
+        .bg-custom {
+            background-image: linear-gradient(#3e008f, #660a8f);
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: aniamtion 0.6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+            animation: popover 0.6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        }
+
+        @keyframes popover {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        #navbarSupportedContent {
+            transition: transform 0.5s;
+            animation: slidein 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s;
+        }
+
+        @keyframes slidein {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 0.3px;
+        }
+
+        .dropdown-menu {
+            min-width: 7rem !important;
+            background-color: #202124;
+        }
+
+        .dropdown-menu a {
+            color: white;
+        }
+
+        .dropdown-item:focus,
+        .dropdown-item:hover {
+            color: rgb(189, 184, 184);
+            background-color: #3f4043;
+        }
+
+        .dropdown-toggle::after {
+            margin-left: 1.5em;
+        }
+
+        /* nav transition hover */
+        .nav-link {
+            transition: all 2s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            text-align: left;
+            content: '';
+            margin: 0;
+            opacity: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+            z-index: 1;
+        }
+
+        .nav-link:hover::after {
+            z-index: -10;
+            animation: fill 0.8s forwards;
+            opacity: 1;
+        }
+
+        @keyframes fill {
+            0% {
+                width: 0%;
+                height: 1px;
+            }
+
+            50% {
+                width: 100%;
+                height: 1px;
+            }
+
+            100% {
+                width: 100%;
+                height: 100%;
+                border-radius: 52px;
+                background-color: #cdcdcd80;
+
+            }
+        }
+
+        /* hero section */
+        h1 {
+            font-size: 106px;
+            line-height: 80px;
+            letter-spacing: -2px;
+            font-weight: 500;
+        }
+
+        .lead {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 500;
+        }
+
+        .custom-padding {
+            width: max-content;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 0.8rem 1.7rem;
+        }
+
+        .custom-transform,
+        #color-trans {
+            transition: all 0.5s ease;
+        }
+
+        .custom-transform:hover #color-trans {
+            color: rgb(89, 113, 156);
+        }
+
+        #join {
+            font-size: 4rem;
+        }
+
+        /* button animation */
+        .button {
+            position: relative;
+            overflow: hidden;
+            height: 3rem;
+            padding: 0 2rem;
+            border-radius: 1.5rem;
+            background: #3d3a4e;
+            background-size: 400%;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover::before {
+            transform: scaleX(1);
+        }
+
+        .button-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            width: 100%;
+            height: inherit;
+            border-radius: inherit;
+            background: linear-gradient(82.3deg,
+                    rgba(150, 93, 233, 1) 10.8%,
+                    rgb(88, 148, 238) 94.3%);
+            transition: all 0.475s;
+        }
+
+        /* search */
+        input[type="search"] {
+            border: 1px solid #6a6262;
+            background-color: transparent;
+            padding: .375rem 1.75rem;
+            font-size: 1.2rem;
+        }
+
+        input[type="search"]:focus,
+        input[type="search"]:active {
+            background-color: transparent;
+        }
+
+        #see {
+            color: #817e84;
+            letter-spacing: 1.7px;
+            font-weight: 600;
+            font-size: 2.2rem;
+        }
+
+        /* masonry */
+        .card {
+            border: 3px solid rgb(117 55 129 / 47%);
+        }
+
+        .card1 {
+            position: absolute;
+            left: 0%;
+            top: 0px;
+        }
+
+        .card2 {
+            position: absolute;
+            left: 33.3328%;
+            top: 0px;
+        }
+
+        .card3 {
+            position: absolute;
+            left: 66.6656%;
+            top: 0px;
+        }
+
+        .card4 {
+            position: absolute;
+            left: 33.3328%;
+            top: 170.763px;
+        }
+
+        .card5 {
+            position: absolute;
+            left: 33.3328%;
+            top: 309.551px;
+        }
+
+        .card6 {
+            position: absolute;
+            left: 0%;
+            top: 381.037px;
+        }
+
+        .card7 {
+            position: absolute;
+            left: 66.6656%;
+            top: 424.725px;
+        }
+
+        .card8 {
+            position: absolute;
+            left: 33.3328%;
+            top: 487.276px;
+        }
+
+        /* footer section */
+        .form-select {
+            width: max-content;
+            background-color: transparent;
+            color: #9aa0a6;
+            border: 0;
+            padding: .375rem 6.25rem .375rem .75rem;
+            border-bottom: 1px solid grey;
+            border-radius: 0;
+        }
+
+        /* footer a style */
+        .footer .d-flex img,
+        .footer .d-flex a {
+            transition: transform 0.3s ease;
+        }
+
+        .footer .d-flex img:hover,
+        .footer .d-flex a:hover {
+            transform: translateX(10px);
+        }
+
+        #icon a {
+            color: #9aa0a6;
+        }
+
+        #icon a:hover {
+            transform: translateY(-10px);
+        }
+
+        .fa-youtube:hover {
+            color: rgb(250, 12, 12);
+            background-color: white;
+        }
+
+        .fa-instagram:hover {
+            color: #ff00b1;
+        }
+
+        i.fa-brands.fa-linkedin:hover {
+            color: #0346d0;
+        }
+
+        .fa-x-twitter:hover {
+            background-color: black;
+        }
+
+        /* navbar toggle */
+
+        .navbar-toggler-icon {
+            background-image: url(boot-images/toggle.png);
+        }
+
+        /* back to top */
+
+        .btn-scroll-top {
+
+            position: fixed;
+            right: 1.25rem;
+            bottom: -4.125rem;
+            z-index: 1030;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.75rem;
+            height: 2.75rem;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #b5b5b5;
+            background-color: rgb(116 114 114);
+            border-radius: 50%;
+            /* opacity: 0; */
+            transition: animation 4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation: backtop 4s cubic-bezier(0.68, -0.55, 0.265, 1.55) both 4s;
+            animation-timeline: scroll(250px 0px);
+            transition: transform 0.5s ease-out;
+        }
+
+        .btn-scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        @keyframes backtop {
+            from {
+                bottom: -4.125rem;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 1.25rem;
+                opacity: 1;
+            }
+        }
+
+        .btn-scroll-top>.btn-scroll-top-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* modal */
+
+        .custom-button {
+            background-color: black;
+            border: none;
+        }
+
+        .custom-button a {
+            color: white;
+        }
+
+        .custom-button a:hover {
+            color: black;
+            font-weight: 600;
+        }
+    </style>
+
+<body id="mystyle">
+    <!-- navbar section -->
+    <nav class="navbar navbar-expand-lg  bg-custom py-3 ps-4 pe-5 position-sticky border-bottom border-2">
+        <a class="navbar-brand me-4" href="index.html"><img src="boot-images/logo-white.png" alt="" width="128"
+                height="28"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between custom-nav">
+                <ul class="first list-unstyled d-flex gap-3">
+                    <li class="nav-item"><a href="explore.html" class="nav-link px-4">Explore</a></li>
+                    <li class="nav-item"><a href="community.html" class="nav-link px-4">Community</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link px-4">About</a></li>
+                </ul>
+                <!-- dropdown section -->
+                <ul class="second d-flex">
+                    <li class="dropdown  nav-item list-unstyled">
+                        <a class="nav-link dropdown-toggle bg-transparent shadow-none english px-4" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            English
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Español</a></li>
+                            <li><a class="dropdown-item" href="#">Português</a></li>
+                            <li><a class="dropdown-item" href="#">中国人</a></li>
+                            <li><a class="dropdown-item" href="#">Indonesia</a></li>
+                            <li><a class="dropdown-item" href="#">Française</a></li>
+                        </ul>
+                    </li>
+                    <!-- Button trigger modal -->
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal"
+                            data-bs-target="#signinModal" style="padding: .375rem 1.35rem;">Join</button>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+    <!-- Modal -->
+    <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signinModalLabel" style="color: #363232;font-weight: 600;">Sign in to
+                        join the Google developer program</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="" style="color: #0d0d0d;">Unlock AI tools,exclusive training and insider access. Join
+                        today and accelerate your developer journey
+                    </p>
+                </div>
+                <div class="modal-footer" style="border: 0;">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Dismiss</button>
+                    <button type="button" class="btn btn-light custom-button"> <a href="signin.html"
+                            style="text-decoration: none;font-size: unset;letter-spacing: 0;">SIGN IN</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- hero section -->
+    <div class="container-fluid my-lg-5 my-sm-5 border-bottom border-1">
+        <div class="row featurette">
+            <div class="col-md-5 ps-5 pe-4 py-5 d-flex flex-column  text-left">
+                <h1 class="featurette-heading fw-normal lh-1 font-medium" id="commu">Community</h1>
+                <p class="lead">Meet developers, discover local groups, and build your global network.</p>
+                <button class="button custom-padding border-0">
+                    <span class="button-content"><a href="techmakers.html" class="text-white text-decoration-none">Find
+                            out more </a></span>
+                </button>
+            </div>
+            <div class="col-md-7">
+                <img src="boot-images/io24-community-hero-dark.svg" alt=""
+                    class="hero-image object-cover h-full mw-100 object-left img-fluid">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- heading -->
+
+    <h2 id="join" class="px-lg-5 px-sm-0 pb-2">Join a community group</h2>
+    <h4 id="eng-para" class="px-lg-5 px-sm-2">Engage with developers and technology experts to collaborate and build
+        your network.
+    </h4>
+    <!-- search bar -->
+    <form class="d-flex py-3 px-5" role="search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+            style="border-radius: 2rem;height: 50px;">
+    </form>
+
+
+
+    <h2 class="text-uppercase text-center pt-5 mt-5" id="see">See all communities</h2>
+
+
+    <!-- masonry -->
+    <div class="container-fluid py-5 my-5" id="maso">
+        <div class="row" data-masonry="{&quot;percentPosition&quot;: true }"
+            style="position: relative; height: 688.996px;">
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4 card1">
+                <div class="card">
+                    <img src="boot-images/ioimage.png" alt="" class="img-fluid" width="100%" height="200"
+                        style="object-fit: cover;">
+
+                    <div class="card-body" style="background-color: #d9d2d2;">
+                        <h5 class="card-title text-dark">What's new in Google AI</h5>
+                        <p class="card-text text-dark">Review keynotes, sessions, and learning experiences about the
+                            latest developer products and platforms.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4 card2">
+                <div class="card p-3" style="background-color: #d9d2d2;">
+                    <figure class="p-3 mb-0">
+                        <blockquote class="blockquote text-dark">
+                            <p>"We are at an important inflection point in computing."</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0 text-body-secondary">
+                            <cite title="Source Title">Sundar Pichai (CEO of Google) </cite>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4 card3">
+                <div class="card">
+                    <img src="boot-images/Google-IO-2023.webp" alt="" class="img-fluid" width="100%" height="200"
+                        style="object-fit: cover;">
+
+                    <div class="card-body" style="background-color: #d9d2d2;">
+                        <h5 class="card-title text-dark">Women Texhmakers</h5>
+                        <p class="card-text text-dark">Engage with developers and technology experts to collaborate and
+                            build your network.</p>
+                        <p class="card-text text-dark"><small class="text-body-secondary">Last updated 3 mins
+                                ago</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4 card4">
+                <div class="card text-bg-primary text-center p-3" style="background-color: #d9d2d2;">
+                    <figure class="mb-0">
+                        <blockquote class="blockquote text-dark">
+                            <p>"The real promise of AI is that it can help us solve problems that
+                                entire societies."</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0">
+                            <cite title="Source Title">Jeff Dean (Head of Google AI)</cite>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4 card5">
+                <div class="card text-center">
+                    <div class="card-body" style="background-color: #d9d2d2;">
+                        <h5 class="card-title text-dark">Accelerators</h5>
+                        <p class="card-text text-dark">Explore over 1,000 chapters across 140 countries and meet
+                            like-minded .</p>
+                        <p class="card-text text-dark"><small class="text-body-secondary">Last updated 3 mins
+                                ago</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4 card6">
+                <div class="card">
+                    <img src="boot-images/IO21_CONKEY.jpg" alt="" class="img-fluid" width="100%" height="200"
+                        style="object-fit: cover;">
+
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4 card7">
+                <div class="card p-3 text-end" style="background-color: #d9d2d2;">
+                    <figure class="mb-0">
+                        <blockquote class="blockquote text-dark">
+                            <p style="text-align: left;">"AI is going to be a big part of our lives, and the biggest
+                                responsibility we have as a
+                                company is to get it right."</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer mb-0 text-body-secondary">
+                            <cite title="Source Title">Sundar Pichai (CEO of Google) </cite>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4 card8">
+                <div class="card">
+                    <div class="card-body" style="background-color: #d9d2d2;">
+                        <h5 class="card-title text-dark">Tech Equity Collective</h5>
+                        <p class="card-text text-dark">Review keynotes, sessions, and learning experiences</p>
+                        <p class="card-text text-dark"><small class="text-body-secondary">Last updated 3 mins
+                                ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <div class="footer p-5">
+        <div class="d-flex w-100 flex-column gap-4 justify-content-center align-items-start">
+            <img src="boot-images/google.png" alt="" class="object-cover" style="width: 180px;height:20px;">
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">I/O 2023</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">I/O Puzzle</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">Privacy and terms</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">Community Guidelines</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">FAQ</a>
+            <div class="select-custom py-5">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>English</option>
+                    <option value="1">Português</option>
+                    <option value="2">Español</option>
+                    <option value="3">中国人</option>
+                    <option value="3">Indonesia</option>
+                    <option value="3">Française</option>
+                </select>
+            </div>
+        </div>
+        <div class="d-flex gap-4" id="icon">
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- back to top -->
+    <a href="#top" class="btn-scroll-top show" data-scroll="">
+        <span class="btn-scroll-top-tooltip  fs-sm text-white"><i class="fa-solid fa-arrow-up"></i></span>
+
+    </a>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

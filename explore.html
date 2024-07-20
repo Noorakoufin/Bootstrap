@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="boot-images/io.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="responsive.css">
+    <title> EXPLORE - Google I/O 2024</title>
+    <style>
+        :root {
+            --border-color: #dadce0;
+            --primary-color: #fff;
+            --font-thickness: 400;
+            --bg-color: #202124;
+
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: .3rem;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #5f5e5c;
+            border-radius: .5rem;
+
+        }
+
+        ::selection {
+            background-color: #C49871;
+        }
+
+        .btn {
+            transition: all o.5s ease;
+        }
+
+        #mystyle {
+            color: var(--primary-color);
+            background-color: var(--bg-color);
+            font-family: Google Sans, arial, sans-serif;
+        }
+
+        #mystyle {
+            color: var(--primary-color);
+            background-color: var(--bg-color);
+            font-family: Google Sans, arial, sans-serif;
+        }
+
+        .custom-nav {
+            width: 100%;
+        }
+
+        .bg-custom {
+            background-image: linear-gradient(#3e008f, #660a8f);
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: aniamtion 0.6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+            animation: popover 0.6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        }
+
+        @keyframes popover {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        #navbarSupportedContent {
+            transition: transform 0.5s;
+            animation: slidein 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s;
+        }
+
+        @keyframes slidein {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 0.3px;
+        }
+
+        .dropdown-menu {
+            min-width: 7rem !important;
+            background-color: #202124;
+        }
+
+        .dropdown-menu a {
+            color: white;
+        }
+
+        .dropdown-item:focus,
+        .dropdown-item:hover {
+            color: rgb(189, 184, 184);
+            background-color: #3f4043;
+        }
+
+        .dropdown-toggle::after {
+            margin-left: 1.5em;
+        }
+
+
+        /*hero section  */
+        h1 {
+            font-size: 90px;
+            line-height: 80px;
+            letter-spacing: -2px;
+            font-weight: 500;
+        }
+
+        .lead {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 500;
+        }
+
+        .custom-padding {
+            width: max-content;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 0.8rem 1.7rem;
+        }
+
+        a {
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        #community,
+        #heading {
+            font-size: 3rem;
+        }
+
+        /* hidden images */
+
+
+        .hidden-image {
+            display: none;
+        }
+
+        .hover-image2:hover .hidden-image,
+        .hover-image:hover .hidden-image {
+            display: block;
+        }
+
+        .hover-image2:hover .visible-image,
+        .hover-image:hover .visible-image {
+            display: none;
+        }
+
+        .hover-image {
+            position: relative;
+        }
+
+        .hover-image::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            border: 1px solid #fdfdfd;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 1.5rem;
+            transition: clip-path 0.5s ease;
+            clip-path: inset(50% -1px);
+        }
+
+        .hover-image:hover::after {
+            clip-path: inset(0% -11px);
+        }
+
+        /* checkbox section */
+
+        .check-button {
+            border-radius: 1rem;
+
+        }
+
+        p#focus {
+            display: inline-block;
+            padding: 10px 0;
+            font-size: 1.1rem;
+            letter-spacing: 0.7px;
+        }
+
+        input[type="checkbox"][id="check-btn"],
+        input[type="checkbox"][id="check-btn2"] {
+            display: none;
+        }
+
+        .menu label {
+            line-height: 2rem;
+        }
+
+        .drop-menu {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .drop-btn:has(input[type="checkbox"][id="check-btn2"]:checked) .drop-menu,
+        .drop-btn:has(input[type="checkbox"][id="check-btn"]:checked) .drop-menu {
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .drop-btn:has(input[type="checkbox"][id="check-btn2"]:checked) .check-button,
+        .drop-btn:has(input[type="checkbox"][id="check-btn"]:checked) .check-button {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .drop-btn:has(input[type="checkbox"][id="check-btn2"]:checked) .fa-solid,
+        .drop-btn:has(input[type="checkbox"][id="check-btn"]:checked) .fa-solid {
+            rotate: 180deg;
+        }
+
+        .check-container:has(input[type="checkbox"][id="ai"]:checked) #ai-cont,
+        .check-container:has(input[type="checkbox"][id="cloud"]:checked) #cloud-cont,
+        .check-container:has(input[type="checkbox"][id="mobile"]:checked) #mobile-cont,
+        .check-container:has(input[type="checkbox"][id="web"]:checked) #web-cont {
+            opacity: 1;
+            width: 50%;
+
+        }
+
+        .check-container:has(input[type="checkbox"][id="ai"]:checked) #cloud-cont,
+        .check-container:has(input[type="checkbox"][id="ai"]:checked) #mobile-cont,
+        .check-container:has(input[type="checkbox"][id="ai"]:checked) #web-cont,
+        .check-container:has(input[type="checkbox"][id="cloud"]:checked) #ai-cont,
+        .check-container:has(input[type="checkbox"][id="cloud"]:checked) #mobile-cont,
+        .check-container:has(input[type="checkbox"][id="cloud"]:checked) #web-cont,
+        .check-container:has(input[type="checkbox"][id="mobile"]:checked) #ai-cont,
+        .check-container:has(input[type="checkbox"][id="mobile"]:checked) #cloud-cont,
+        .check-container:has(input[type="checkbox"][id="mobile"]:checked) #web-cont,
+        .check-container:has(input[type="checkbox"][id="web"]:checked) #ai-cont,
+        .check-container:has(input[type="checkbox"][id="web"]:checked) #cloud-cont,
+        .check-container:has(input[type="checkbox"][id="web"]:checked) #mobile-cont {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            padding: 0;
+        }
+
+        .custom-transform,
+        #color-trans {
+            transition: all 0.5s ease;
+        }
+
+        .custom-transform:hover #color-trans {
+            color: rgb(89, 113, 156);
+        }
+
+        .custom-rounded {
+            border-radius: 11px;
+        }
+
+        .custom-transform:hover,
+        .responsive-child:hover,
+        .hover-image:hover {
+            transform: translateY(-1.5%);
+        }
+
+        button#pad {
+            padding-left: 7rem;
+        }
+
+        .column-custom {
+            width: 60%;
+            flex-direction: column;
+        }
+
+        /* footer section */
+        .form-select {
+            width: max-content;
+            background-color: transparent;
+            color: #9aa0a6;
+            border: 0;
+            padding: .375rem 6.25rem .375rem .75rem;
+            border-bottom: 1px solid grey;
+            border-radius: 0;
+        }
+
+        /* button animation */
+        .button {
+            position: relative;
+            overflow: hidden;
+            height: 3rem;
+            padding: 0 2rem;
+            border-radius: 1.5rem;
+            background: #3d3a4e;
+            background-size: 400%;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover::before {
+            transform: scaleX(1);
+        }
+
+        .button-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            width: 100%;
+            height: inherit;
+            border-radius: inherit;
+            background: linear-gradient(82.3deg,
+                    rgba(150, 93, 233, 1) 10.8%,
+                    rgb(88, 148, 238) 94.3%);
+            transition: all 0.475s;
+        }
+
+        /* footer a style */
+        .footer .d-flex img,
+        .footer .d-flex a {
+            transition: all 0.3s ease;
+        }
+
+        .footer .d-flex img:hover,
+        .footer .d-flex a:hover {
+            transform: translateX(10px);
+        }
+
+        #icon a {
+            color: #9aa0a6;
+        }
+
+        #icon a:hover {
+            transform: translateY(-10px);
+        }
+
+        .fa-youtube:hover {
+            color: rgb(250, 12, 12);
+            background-color: white;
+        }
+
+        .fa-instagram:hover {
+            color: #ff00b1;
+        }
+
+        i.fa-brands.fa-linkedin:hover {
+            color: #0346d0;
+        }
+
+        .fa-x-twitter:hover {
+            background-color: black;
+        }
+
+        /* nav transition hover */
+        .nav-link {
+            transition: all 2s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            text-align: left;
+            content: '';
+            margin: 0;
+            opacity: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .nav-link:hover {
+            color: #ffffff;
+            z-index: 1;
+        }
+
+        .nav-link:hover::after {
+            z-index: -10;
+            animation: fill 0.8s forwards;
+            opacity: 1;
+        }
+
+        @keyframes fill {
+            0% {
+                width: 0%;
+                height: 1px;
+            }
+
+            50% {
+                width: 100%;
+                height: 1px;
+            }
+
+            100% {
+                width: 100%;
+                height: 100%;
+                border-radius: 52px;
+                background-color: #cdcdcd80;
+
+            }
+        }
+
+        .active {
+            color: #ffffff;
+            width: 100%;
+            background-color: #cdcdcd80;
+            border-radius: 52px;
+        }
+
+        /* navbar toggle */
+
+        .navbar-toggler-icon {
+            background-image: url(boot-images/toggle.png);
+        }
+
+        /* custom-checkbox */
+        .custom-checkbox {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            font-size: 16px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .custom-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .custom-checkbox .checkmark {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #333;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+            transform-style: preserve-3d;
+        }
+
+        .custom-checkbox .checkmark::before {
+            content: "\2713";
+            font-size: 16px;
+            color: transparent;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .custom-checkbox input[type="checkbox"]:checked+.checkmark {
+            background-color: #333;
+            border-color: #333;
+            transform: scale(1.1) rotateZ(360deg) rotateY(360deg);
+        }
+
+        .custom-checkbox input[type="checkbox"]:checked+.checkmark::before {
+            color: #fff;
+        }
+
+        .custom-checkbox:hover {
+            color: #666;
+        }
+
+        .custom-checkbox:hover .checkmark {
+            border-color: #666;
+            background-color: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        .custom-checkbox input[type="checkbox"]:focus+.checkmark {
+            box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+            outline: none;
+        }
+
+        .custom-checkbox .checkmark,
+        .custom-checkbox input[type="checkbox"]:checked+.checkmark {
+            transition: background-color 1.3s, border-color 1.3s, color 1.3s, transform 0.3s;
+        }
+
+        /* navbar toggle */
+
+        .navbar-toggler-icon {
+            background-image: url(boot-images/toggle.png);
+        }
+
+        /* back to top */
+
+        .btn-scroll-top {
+
+            position: fixed;
+            right: 1.25rem;
+            bottom: -4.125rem;
+            z-index: 1030;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.75rem;
+            height: 2.75rem;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #b5b5b5;
+            background-color: rgb(116 114 114);
+            border-radius: 50%;
+            /* opacity: 0; */
+            transition: animation 4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation: backtop 4s cubic-bezier(0.68, -0.55, 0.265, 1.55) both 4s;
+            animation-timeline: scroll(250px 0px);
+            transition: transform 0.5s ease-out;
+        }
+
+        @keyframes backtop {
+            from {
+                bottom: -4.125rem;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 1.25rem;
+                opacity: 1;
+            }
+        }
+
+        .btn-scroll-top>.btn-scroll-top-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .btn-scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* modal */
+
+        .custom-button {
+            background-color: black;
+            border: none;
+        }
+
+        .custom-button a {
+            color: white;
+        }
+
+        .custom-button a:hover {
+            color: black;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body id="mystyle">
+    <!-- navbar section -->
+    <nav class="navbar navbar-expand-lg  bg-custom py-3 ps-4 pe-5 position-sticky border-bottom border-2">
+        <a class="navbar-brand me-4" href="index.html"><img src="boot-images/logo-white.png" alt="" width="128"
+                height="28"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between custom-nav">
+                <ul class="first list-unstyled d-flex gap-3">
+                    <li class="nav-item"><a href="explore.html" class="nav-link active px-4">Explore</a></li>
+                    <li class="nav-item"><a href="community.html" class="nav-link px-4">Community</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link px-4">About</a></li>
+                </ul>
+                <!-- dropdown section -->
+                <ul class="second d-flex">
+                    <li class="dropdown  nav-item list-unstyled">
+                        <a class="nav-link dropdown-toggle bg-transparent shadow-none english px-4 drop" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            English
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Español</a></li>
+                            <li><a class="dropdown-item" href="#">Português</a></li>
+                            <li><a class="dropdown-item" href="#">中国人</a></li>
+                            <li><a class="dropdown-item" href="#">Indonesia</a></li>
+                            <li><a class="dropdown-item" href="#">Française</a></li>
+                        </ul>
+                    </li>
+                    <!-- Button trigger modal -->
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal"
+                            data-bs-target="#signinModal" style="padding: .375rem 1.35rem;">Join</button>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+    <!-- Modal -->
+    <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signinModalLabel" style="color: #363232;font-weight: 600;">Sign in to
+                        join the Google developer program</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="" style="color: #0d0d0d;">Unlock AI tools,exclusive training and insider access. Join
+                        today and accelerate your developer journey
+                    </p>
+                </div>
+                <div class="modal-footer" style="border: 0;">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Dismiss</button>
+                    <button type="button" class="btn btn-light custom-button"> <a href="signin.html"
+                            style="text-decoration: none;font-size: unset;letter-spacing: 0;">SIGN IN</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- hero section -->
+    <div class="container-fluid my-0 border-bottom border-1">
+        <div class="row featurette">
+            <div class="col-md-5 ps-5 pe-4 py-5 d-flex flex-column  text-left">
+                <h1 class="featurette-heading fw-normal lh-1 font-medium" id="catch">Watch and explore</h1>
+                <p class="lead">Review keynotes, sessions, and learning experiences about the latest developer products
+                    and platforms.</p>
+                <button class="button custom-padding border-0">
+                    <span class="button-content">See all sessions </span>
+                </button>
+            </div>
+            <div class="col-md-7">
+                <img src="boot-images/io24-explore-hero-dark.webp" alt="" width="100%" height="500"
+                    class="hero-image object-cover img-fluid">
+            </div>
+        </div>
+    </div>
+    <!-- end of hero section -->
+
+    <div class="d-flex justify-content-between align-items-center p-5" id="grow">
+        <h2 class="d-inline-block" id="heading">What are you building for?</h2>
+        <a href="" class="text-white">Meet the I/O speakers</a>
+    </div>
+
+    <!-- four card section -->
+    <div class="container-fluid px-lg-5 px-sm-5">
+        <div class="row row-cols-4">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 hover-image pt-4">
+                <img src="boot-images/io24-stacks-m-dark.webp" style="width: 100%;height: auto;" alt=""
+                    class="w-316 h-170 object-cover visible-image img-fluid">
+                <img src="boot-images/io24-stacks-m.webp" style="width: 100%;height: auto;" alt=""
+                    class="w-316 h-170 object-cover hidden-image img-fluid">
+                <div class="card-body px-0 pt-4 pb-0">
+                    <h5>Mobile</h5>
+                    <p>Develope for a range of audiences and form factors.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 hover-image pt-4">
+                <img src="boot-images/io24-stacks-w-dark.webp" alt="" style="width: 100%;height: auto;"
+                    class="w-316 h-170 object-cover visible-image img-fluid">
+                <img src="boot-images/io24-stacks-w.webp" alt="" style="width: 100%;height: auto;"
+                    class="w-316 h-170 object-cover hidden-image img-fluid">
+                <div class="card-body px-0 pt-4 pb-0">
+                    <h5>Web</h5>
+                    <p>create fast,secure sites for the open web.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 hover-image pt-4">
+                <img src="boot-images/io24-stacks-a-dark.webp" alt="" style="width: 100%;height: auto;"
+                    class="w-316 h-170 object-cover visible-image img-fluid">
+                <img src="boot-images/io24-stacks-a.webp" alt="" style="width: 100%;height: auto;"
+                    class="w-316 h-170 object-cover hidden-image img-fluid">
+                <div class="card-body px-0 pt-4 pb-0">
+                    <h5>ML/AI</h5>
+                    <p>Access cutting-edge AI models and open source tools for machine learning.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 hover-image pt-4">
+                <img src="boot-images/io24-stacks-c-dark.webp" alt="" style="width: 100%;height: auto;"
+                    class="w-316 h-170 object-cover visible-image img-fluid">
+                <img src="boot-images/io24-stacks-c.webp" alt="" style="width: 100%;height: auto;"
+                    class="w-316 h-170 object-cover hidden-image img-fluid">
+                <div class="card-body px-0 pt-4 pb-0">
+                    <h5>Cloud</h5>
+                    <p>Simplify and scale end-to-end development.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of four card -->
+
+    <div class="container-fluid p-lg-5 p-sm-5 mt-5 check-container">
+        <div class="row row-cols-2">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <!-- checkboxes -->
+                <div class="col-12 col-sm-12 d-flex flex-column column-custom">
+                    <div class="drop-btn">
+                        <div class="check-button d-flex justify-content-around"
+                            style="background-color: white;color: black;">
+                            <p class="mb-0" id="focus">Focus </p>
+                            <button style="background: transparent;border: none;" id="pad">
+                                <input type="checkbox" name="check" id="check-btn">
+                                <label for="check-btn"><i class="fa-solid fa-angle-down"></i></label>
+                            </button>
+                        </div>
+                        <div class="drop-menu border border-2"
+                            style="padding: 10px;border-bottom-right-radius: 1rem;border-bottom-left-radius: 1rem;">
+                            <div class="menu menu1">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="" id="ai">
+                                    <span class="checkmark"></span></label>
+                                <label for="ai" class="text-white">AI</label>
+
+                            </div>
+                            <div class="menu menu2">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="" id="cloud">
+                                    <span class="checkmark"></span></label>
+                                <label for="cloud">Cloud</label>
+                            </div>
+                            <div class="menu menu3">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="" id="mobile">
+                                    <span class="checkmark"></span></label>
+                                <label for="mobile">Mobile</label>
+                            </div>
+                            <div class="menu menu4">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="" id="web">
+                                    <span class="checkmark"></span></label>
+                                <label for="web">Web</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="drop-btn" style="height: 260px;padding-top: 20px;">
+                        <div class="check-button d-flex justify-content-around"
+                            style="background-color: white;color: black;">
+                            <p class="mb-0" id="focus">Topics </p>
+                            <button style="background: transparent;border: none;" id="pad">
+                                <input type="checkbox" name="check" id="check-btn2">
+                                <label for="check-btn2"><i class="fa-solid fa-angle-down"></i></label>
+                            </button>
+                        </div>
+                        <div class="drop-menu border border-2"
+                            style="padding: 10px;border-bottom-right-radius: 1rem;border-bottom-left-radius: 1rem;overflow: auto;">
+                            <div class="menu menu1">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="">
+                                    <span class="checkmark"></span></label>
+                                <label for="ai">Wear OS</label>
+                            </div>
+                            <div class="menu menu2">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="">
+                                    <span class="checkmark"></span></label>
+                                <label for="cloud">Machine Learning</label>
+                            </div>
+                            <div class="menu menu3">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="">
+                                    <span class="checkmark"></span></label>
+                                <label for="mobile">Android Angular</label>
+                            </div>
+                            <div class="menu menu4">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="">
+                                    <span class="checkmark"></span></label>
+                                <label for="web">AR/VR</label>
+                            </div>
+                            <div class="menu menu5">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="">
+                                    <span class="checkmark"></span></label>
+                                <label for="web">Google OS</label>
+                            </div>
+                            <div class="menu menu6">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="">
+                                    <span class="checkmark"></span></label>
+                                <label for="web">Cloud</label>
+                            </div>
+                            <div class="menu menu7">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="">
+                                    <span class="checkmark"></span></label>
+                                <label for="web">Design</label>
+                            </div>
+                            <div class="menu menu8">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="">
+                                    <span class="checkmark"></span></label>
+                                <label for="web">Firebase</label>
+                            </div>
+                            <div class="menu menu9">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="">
+                                    <span class="checkmark"></span></label>
+                                <label for="web">Go</label>
+                            </div>
+                            <div class="menu menu10">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="">
+                                    <span class="checkmark"></span></label>
+                                <label for="web">Google Play</label>
+                            </div>
+                            <div class="menu menu11">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="">
+                                    <span class="checkmark"></span></label>
+                                <label for="web">Google Pay</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                <div class="row row-col-2">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 custom-transform" id="web-cont">
+                        <img src="boot-images/web1.webp" alt=""
+                            class="w-100 h-225 object-cover custom-rounded img-fluid">
+                        <div class="card-body">
+                            <h5 id="color-trans">What's new in flutter</h5>
+                            <p>Learn about Google’s newest developer tools and discover how they fuel innovation and
+                                enhance
+                                your workflow for maxim...</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 custom-transform" id="web-cont">
+                        <img src="boot-images/web2.webp" alt=""
+                            class="w-100 h-225 object-cover custom-rounded img-fluid">
+                        <div class="card-body">
+                            <h5 id="color-trans">What's new in chrome OS</h5>
+                            <p>Learn about Google’s newest developer tools and discover how they fuel innovation and
+                                enhance
+                                your workflow for maxim...</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 custom-transform" id="cloud-cont">
+                        <img src="boot-images/cloud1.webp" alt=""
+                            class="w-100 h-225 object-cover custom-rounded img-fluid">
+                        <div class="card-body">
+                            <h5 id="color-trans">What's new in google cloud and google workspace</h5>
+                            <p>Learn about Google’s newest developer tools and discover how they fuel innovation and
+                                enhance
+                                your workflow for maxim...</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 custom-transform" id="cloud-cont">
+                        <img src="boot-images/cloud2.webp" alt=""
+                            class="w-100 h-225 object-cover custom-rounded img-fluid">
+                        <div class="card-body">
+                            <h5 id="color-trans">
+                                Accelerate PyTorch workloads with Cloud TPUs and OpenXLA
+                            </h5>
+                            <p>Learn about Google’s newest developer tools and discover how they fuel innovation and
+                                enhance
+                                your workflow for maxim...</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 custom-transform" id="ai-cont">
+                        <img src="boot-images/ai1.webp" alt=""
+                            class="w-100 h-225 object-cover custom-rounded img-fluid">
+                        <div class="card-body">
+                            <h5 id="color-trans">What's new in goole AI</h5>
+                            <p>Learn about Google’s newest developer tools and discover how they fuel innovation and
+                                enhance
+                                your workflow for maxim...</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 custom-transform" id="ai-cont">
+                        <img src="boot-images/ai2.webp" alt=""
+                            class="w-100 h-225 object-cover custom-rounded img-fluid">
+                        <div class="card-body">
+                            <h5 id="color-trans">AI transformation of art</h5>
+                            <p>Learn about Google’s newest developer tools and discover how they fuel innovation and
+                                enhance
+                                your workflow for maxim...</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 custom-transform" id="mobile-cont">
+                        <img src="boot-images/mobile1.webp" alt=""
+                            class="w-100 h-225 object-cover custom-rounded img-fluid">
+                        <div class="card-body">
+                            <h5 id="color-trans">What's new in android</h5>
+                            <p>Learn about Google’s newest developer tools and discover how they fuel innovation and
+                                enhance
+                                your workflow for maxim...</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 custom-transform" id="mobile-cont">
+                        <img src="boot-images/mobile2.webp" alt=""
+                            class="w-100 h-225 object-cover custom-rounded img-fluid">
+                        <div class="card-body">
+                            <h5 id="color-trans">What's new in android in android developement tools</h5>
+                            <p>Learn about Google’s newest developer tools and discover how they fuel innovation and
+                                enhance
+                                your workflow for maxim...</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 custom-transform" id="main">
+                        <img src="boot-images/io24-featured-keynote-recap.webp" alt=""
+                            class="w-100 h-225 object-cover custom-rounded img-fluid">
+                        <div class="card-body">
+                            <h5 id="color-trans">Google Keynote</h5>
+                            <p>Tune in to find out how we're furthering our mission to organize the world's information
+                                and make
+                                it universally acce...</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 custom-transform" id="main">
+                        <img src="boot-images/io24-featured-keynote-recap-developer.webp" alt=""
+                            class="w-100 h-225 object-cover custom-rounded img-fluid">
+                        <div class="card-body">
+                            <h5 id="color-trans">Developer Keynote</h5>
+                            <p>Learn about Google’s newest developer tools and discover how they fuel innovation and
+                                enhance
+                                your workflow for maxim...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer p-5">
+        <div class="d-flex w-100 flex-column gap-4 justify-content-center align-items-start">
+            <img src="boot-images/google.png" alt="" class="object-cover" style="width: 180px;height:20px;">
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">I/O 2023</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">I/O Puzzle</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">Privacy and terms</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">Community Guidelines</a>
+            <a href="" class="text-decoration-none" style="color: #9aa0a6;font-size: 16px;">FAQ</a>
+            <div class="custom-select py-5">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>English</option>
+                    <option value="1">Português</option>
+                    <option value="2">Español</option>
+                    <option value="3">中国人</option>
+                    <option value="3">Indonesia</option>
+                    <option value="3">Française</option>
+                </select>
+            </div>
+        </div>
+        <div class="d-flex gap-4" id="icon">
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+    <!-- back to top -->
+    <a href="#top" class="btn-scroll-top show" data-scroll="">
+        <span class="btn-scroll-top-tooltip  fs-sm text-white"><i class="fa-solid fa-arrow-up"></i></span>
+
+    </a>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  -->
+</body>
+
+</html>
