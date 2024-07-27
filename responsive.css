@@ -5,6 +5,11 @@
   .image-slidein {
     animation: none !important;
   }
+
+  .explore-image {
+    width: 100%;
+    height: auto;
+  }
 }
 
 @media screen and (max-width:958px) {
@@ -108,6 +113,28 @@
     height: 500px;
     overflow: scroll;
   }
+
+  .check-container:has(input[type="checkbox"][id="ai"]:checked) #ai-cont,
+  .check-container:has(input[type="checkbox"][id="cloud"]:checked) #cloud-cont,
+  .check-container:has(input[type="checkbox"][id="mobile"]:checked) #mobile-cont,
+  .check-container:has(input[type="checkbox"][id="web"]:checked) #web-cont {
+    opacity: 1;
+    width: 100% !important;
+
+  }
+
+  .content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #general-id,
+  #register-id,
+  #google-id,
+  #community-id,
+  #terms-id {
+    font-size: 1.8rem;
+  }
 }
 
 /* masonry */
@@ -129,6 +156,10 @@
     font-size: 3rem !important;
   }
 
+  .navbar-nav a {
+    width: max-content;
+  }
+
   #women-text,
   #freq {
     display: none;
@@ -140,7 +171,7 @@
 
   #community,
   #heading {
-    font-size: 2.3rem !important;
+    font-size: 2.1rem !important;
   }
 
   #grow {
@@ -206,7 +237,7 @@
   }
 
   #accordion-style-1 .btn-link {
-    font-size: 12px;
+    font-size: 12px !important;
   }
 
   .text-right-image {
@@ -227,6 +258,7 @@
 
   .second {
     padding-left: 0;
+    padding-top: 1rem;
   }
 
   .women {
@@ -235,6 +267,14 @@
 
   #accordian-style-section {
     padding-bottom: 0 !important;
+  }
+
+  #general-id,
+  #register-id,
+  #google-id,
+  #community-id,
+  #terms-id {
+    font-size: 1.3rem;
   }
 }
 

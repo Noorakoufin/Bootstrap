@@ -340,7 +340,7 @@ a {
 
 .footer .d-flex img:hover,
 .footer .d-flex a:hover {
-    transform: translateX(10px);
+    transform: translateY(-10px);
 }
 
 #icon a {
